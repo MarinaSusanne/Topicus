@@ -1,36 +1,47 @@
 package com.example.Topicus.model;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import java.util.List;
 
 @Entity
-@Table(name = "patienten")
+@Table(name = "patients")
 public class Patient {
     @Id
-    private Long ISBN;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false, unique = true)
-    private String naam;
+    private String bsn;
 
-    @OneToMany(mappedBy = "patient")
-    @JsonIgnore
-    private List<Recept> recepten;
+    @Column(nullable = false, unique = true)
+    private String name;
+
+//    @OneToMany(mappedBy = "patient")
+//    @JsonIgnore
+//    private List <Prescription> prescriptions;
 
 
-    public Long getISBN() {
-        return ISBN;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setISBN(Long ISBN) {
-        this.ISBN = ISBN;
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getBsn() {
+        return bsn;
     }
 
-    public String getNaam() {
-        return naam;
+    public void setBsn(String bsn) {
+        this.bsn = bsn;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
