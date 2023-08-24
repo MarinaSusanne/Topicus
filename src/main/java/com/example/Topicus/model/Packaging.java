@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 @Embeddable
 public class Packaging {
     private String type;
+
+    @Column(columnDefinition = "integer default 0", nullable = false)
     private int unitsPerPackage;
+
+    @Column(nullable = false)
     private String amountPerUnit;
-
-
 
     public String getType() {
         return type;

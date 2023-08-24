@@ -15,12 +15,6 @@ public class Patient {
     @Column(nullable = false, unique = true)
     private String name;
 
-//    @OneToMany(mappedBy = "patient")
-//    @JsonIgnore
-//    private List <Prescription> prescriptions;
-
-
-
     public Long getId() {
         return id;
     }

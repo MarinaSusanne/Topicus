@@ -1,12 +1,10 @@
 package com.example.Topicus.service;
-
 import com.example.Topicus.dto.MedicineDto;
 import com.example.Topicus.dto.PackagingDto;
 import com.example.Topicus.exception.NotFoundException;
 import com.example.Topicus.model.Medicine;
 import com.example.Topicus.model.Packaging;
 import com.example.Topicus.repository.MedicineRepository;
-import com.example.Topicus.repository.PrescriptionRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +15,7 @@ public class MedicineService {
 
     private final ModelMapper modelMapper;
 
-    public MedicineService(MedicineRepository medicineRepository,  ModelMapper modelMapper) {
+    public MedicineService(MedicineRepository medicineRepository, ModelMapper modelMapper) {
         this.medicineRepository = medicineRepository;
         this.modelMapper = modelMapper;
     }
