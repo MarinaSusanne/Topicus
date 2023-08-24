@@ -25,12 +25,12 @@ public class PrescriptionController {
         return ResponseEntity.ok(prescriptionDto);
     }
 
-//    @GetMapping("/patients/{patientId}")
-//    public ResponseEntity <List<PrescriptionDto>> getAllPrescriptionByPatientId(@PathVariable Long patientId) {
-//        List<PrescriptionDto> prescriptions = prescriptionService.getAllPrescriptionByPatientId(patientId);
-//        return ResponseEntity.ok(prescriptions);
-//    }
-//
+    @GetMapping("/patients/{patientId}")
+    public ResponseEntity <List<PrescriptionDto>> getAllPrescriptionByPatientId(@PathVariable Long patientId) {
+        List<PrescriptionDto> prescriptions = prescriptionService.getAllPrescriptionByPatientId(patientId);
+        return ResponseEntity.ok(prescriptions);
+    }
+
     @PostMapping()
     public ResponseEntity<PrescriptionDto> createPrescription(@Valid @RequestBody PrescriptionDto prescriptionDto) {
         PrescriptionDto createdPrescription = prescriptionService.createPrescription(prescriptionDto);

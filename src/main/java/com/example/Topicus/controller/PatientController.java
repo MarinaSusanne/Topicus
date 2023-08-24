@@ -26,11 +26,16 @@ public class PatientController {
         return ResponseEntity.ok(patientDto);
     }
 
+//    @GetMapping("/search")
+//    public ResponseEntity<List<PatientDto>> searchPatientByName(@RequestParam(name = "name") String name) {
+//        List<PatientDto> patients = patientService.searchPatientByName(name);
+//        return ResponseEntity.ok(patients);
+//    }
+
     @PostMapping()
     public ResponseEntity<PatientDto> createPatient(@Valid @RequestBody PatientDto patientDto) {
         PatientDto createdPatient = patientService.createPatient(patientDto);
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/" + createdPatient.getId()).toUriString());
         return ResponseEntity.created(uri).body(createdPatient);
     }
-
 }

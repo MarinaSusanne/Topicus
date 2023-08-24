@@ -1,7 +1,6 @@
 package com.example.Topicus.model;
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "patients")
 public class Patient {
@@ -12,7 +11,7 @@ public class Patient {
     @Column(nullable = false, unique = true)
     private String bsn;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String name;
 
     public Long getId() {

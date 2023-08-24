@@ -5,6 +5,7 @@ import com.example.Topicus.model.Prescription;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Component
@@ -21,7 +22,10 @@ public class PrescriptionMapper {
 
            List<Medicine> medicines = new ArrayList<>();
              medicines.addAll(prescription.getMedicines());
-             prescriptionDto.setMedicines(medicines);
+                 List<Long> medicineIds = medicines.stream()
+                     .map(Medicine::getId)
+                     .collect(Collectors.toList());
+                 prescriptionDto.setMedicineIds(medicineIds);
            return prescriptionDto;
        }
    }

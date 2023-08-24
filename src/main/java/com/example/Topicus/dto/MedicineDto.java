@@ -12,7 +12,6 @@ public class MedicineDto {
 
     private Long id;
     private String name;
-    private Set<Prescription> prescriptions;
     private PackagingDto packaging;
 
 }
